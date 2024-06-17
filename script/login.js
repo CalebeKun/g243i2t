@@ -1,27 +1,28 @@
 const btnLogin = document.querySelector("#btnLogin");
 const inputUsuario = document.querySelector("#usuario");
 const inputSenha = document.querySelector("#senha");
-let usuarioSalvo = null;
+let usuarioLogado = null;
 
-(() => {
-    usuarioSalvo = localStorage.getItem("usuario");
-    if(usuarioSalvo){
-        window.location.href = "http://127.0.0.1:5500/logado.html";
+(()=>{
+    usuarioLogado = localStorage.getItem("usuario");
+    if(usuarioLogado){
+        window.location.href = "/tmp/guest-wgo1pj/g243i2t/logado.html";
     }
-})()
+})();
 
-btnLogin.onclick = (e) => {
+btnLogin.onclick = (e) =>{
+
     e.preventDefault();
+
     let usuario = inputUsuario.value;
-    let inputSenha = inputSenha.value;
-    if (usuario) {
-        if (usuario === "user") {
-            if (senha === "123") {
+    let senha = inputSenha.value;
+    if(usuario){
+        if(usuario === "raul"){
+            if(senha === "123"){
                 localStorage.setItem("usuario",usuario);
-                window.location.href = "http://127.0.0.1:5500/logado.html";
+                window.location.href = "/tmp/guest-wgo1pj/g243i2t/logado.html";
             }
-            
-        }else {
+        }else{
             inputUsuario.focus();
         }
     }
